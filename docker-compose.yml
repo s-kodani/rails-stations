@@ -1,6 +1,7 @@
 version: '3'
 services:
   db:
+    hostname: db
     build:
       context: ./infra/db
       dockerfile: Dockerfile
