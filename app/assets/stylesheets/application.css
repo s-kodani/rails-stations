@@ -14,6 +14,33 @@
  *= require_self
  */
 
- body {
-    margin: 0;
- }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.alert {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  border: none;
+  background-color: rgb(251, 250, 200);
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.alert.alert-success {
+  background-color: rgb(203, 251, 200);
+}
+
+.alert.alert-danger {
+  background-color: rgb(251, 200, 200);
+  color:rgb(217, 58, 58)
+}
+
+.field_with_errors {
+  display: inline-block;
+}

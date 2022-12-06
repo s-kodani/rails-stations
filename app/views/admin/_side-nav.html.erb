@@ -2,7 +2,10 @@
   <span>Menu</span>
   <ul>
     <li>
-      <a href="/admin/movies">Movies</a>
+      <%= link_to "Movies", admin_movies_path %>
+    </li>
+    <li>
+      <%= link_to "New Movie", new_admin_movie_path %>
     </li>
   </ul>
 </div>
