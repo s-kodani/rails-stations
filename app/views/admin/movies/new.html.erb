@@ -43,11 +43,11 @@
     </div>
     <div>
       <%= form.label :登録日時 %><br>
-      <%= form.datetime_field :created_at, value: Time.current.strftime('%Y-%m-%dT%T') %>
+      <%= form.datetime_field :created_at %>
     </div>
     <div>
       <%= form.label :更新日時 %><br>
-      <%= form.datetime_field :updated_at, value: Time.current.strftime('%Y-%m-%dT%T') %>
+      <%= form.datetime_field :updated_at %>
     </div>
     <div>
        <%= form.submit %>
