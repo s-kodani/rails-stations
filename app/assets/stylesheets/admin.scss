@@ -64,5 +64,28 @@
     &__alert {
       margin: 10px;
     }
+
+    &__button-container {
+      width: 96px;
+      margin: 10px;
+      padding: 5px 15px;
+      background-color: #f74040;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+      color: #f0f0f0;
+    }
   }
 }

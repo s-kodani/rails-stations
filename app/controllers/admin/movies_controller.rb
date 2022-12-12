@@ -27,12 +27,19 @@ class Admin::MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
 
     if @movie.update(movie_params)
-      flash.now[:danger] = "編集に成功しました"
-      redirect_to edit_admin_movie_path(params[:id])
+      redirect_to edit_admin_movie_path(@movie.id), flash: {success: "編集に成功しました"}
     else
       flash.now[:danger] = "編集に失敗しました"
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie_name = @movie.name
+    @movie.destroy
+
+    redirect_to admin_movies_path, flash: {success: "映画「#{@movie_name}」の削除に成功しました"}
   end
 
   private

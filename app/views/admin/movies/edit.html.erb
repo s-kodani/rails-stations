@@ -18,4 +18,10 @@
   <div class="admin-main__form-container">
     <%= render "form", movie: @movie %>
   </div>
+
+  <button class="admin-main__button-container">
+    <%= link_to "削除", admin_movie_path(@movie), method: :delete, data: {
+      confirm: "削除しても良いですか？"
+    }, class: "admin-main__button" %>
+  </button>
 </div>

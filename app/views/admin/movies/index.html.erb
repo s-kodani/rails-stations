@@ -2,6 +2,15 @@
 <%= render 'admin/side-nav' %>
 <div class="admin-main">
   <h2 class="admin-main__title">Movies</h2>
+
+  <div class="admin-main__alert">
+    <% if flash[:success] %>
+      <p class="alert alert-success"><%= flash[:success] %></p>
+    <% elsif flash[:danger] %>
+      <p class="alert alert-danger"><%= flash[:danger] %></p>
+    <% end %>
+  </div>
+
   <div class="admin-main__table">
     <table>
       <thead>

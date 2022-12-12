@@ -29,16 +29,18 @@ body {
   border: none;
   background-color: rgb(251, 250, 200);
   border-radius: 4px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .alert.alert-success {
-  background-color: rgb(203, 251, 200);
+  background-color: #b7ffdb;
+  color: #1b905b;
+  border: 1px solid #5af9b1;
 }
 
 .alert.alert-danger {
   background-color: rgb(251, 200, 200);
-  color:rgb(217, 58, 58)
+  color:rgb(217, 58, 58);
+  border: 1px solid #f95a5a;
 }
 
 .field_with_errors {
