@@ -20,12 +20,29 @@
 
 body {
   margin: 0;
+  color: #343434;
+
+  font-size: 14px;
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: 0.1em;
+
+  font-size: 2.5em;
+}
+h2 {
+  text-align: center;
+  letter-spacing: 0.1em;
+
+  font-size: 2em;
 }
 
 .alert {
+  margin: 10px;
+  padding: 15px;
   display: block;
   text-align: center;
-  padding: 15px;
   border: none;
   background-color: rgb(251, 250, 200);
   border-radius: 4px;
