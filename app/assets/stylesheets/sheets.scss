@@ -1,0 +1,48 @@
+// Place all the styles related to the Sheets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+$max_col: 5;
+$max_row: 3;
+
+.sheets__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+
+  table {
+    max-width: 1000px;
+    width: 80%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    border-spacing: 1vw;
+
+    thead {
+      text-align: center;
+
+      .screen {
+        background-color: #cccccc;
+      }
+
+      .blank {
+        height: 10px;
+      }
+    }
+
+    tbody {
+      text-align: center;
+
+      td {
+        width: 20%;
+        height: 6vw;
+        background-color: #cccccc;
+
+        .reserved {
+          background-color: #333333;
+        }
+      }
+    }
+  }
+}

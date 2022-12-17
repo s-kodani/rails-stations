@@ -1,0 +1,31 @@
+<h1>座席票</h1>
+<div class="sheets__container">
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <td colspan="3" class="screen">
+          スクリーン
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+      <td colspan="5" class="blank"></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <% @sheets.each do |sheet| %>
+        <% if @prev_row != nil && @prev_row != sheet.row then %>
+        </tr>
+        <tr>
+        <% end %>
+          <td>
+            <span><%= sheet.row %> - <%= sheet.column %></span>
+          </td>
+        <% @prev_row = sheet.row %>
+      <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>
