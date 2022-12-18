@@ -27,7 +27,7 @@
     <div class="moview-detail__schedule">
       <div class="movie-detail__schedule-title">上映スケジュール</div>
       <ul class="movie-detail__schedule-list">
-        <% @movie.schedules.each do |schedule| %>
+        <% @schedules.each do |schedule| %>
         <li class="movie-detail__schedule-list-item">
           <a href="">
             <span><%= schedule.start_time.strftime("%H:%M") %>〜<%= schedule.end_time.strftime("%H:%M") %></span>
