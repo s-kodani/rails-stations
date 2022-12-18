@@ -2,29 +2,39 @@
 <div class="movie__search">
   <%= form_with url: movies_path, method: :get do |form| %>
     <%= form.text_field :keyword, placeholder: "キーワードで検索する", value: @keyword %>
-    <%= form.radio_button :is_showing, "all", checked: is_showing_checked(@is_showing, "all") %>
-    <%= form.label :is_showing_all, "全て" %>
-    <%= form.radio_button :is_showing, "1", checked: is_showing_checked(@is_showing, "1") %>
-    <%= form.label :is_showing_1, "公開中" %>
-    <%= form.radio_button :is_showing, "0", checked: is_showing_checked(@is_showing, "0") %>
-    <%= form.label :is_showing_0, "未公開" %>
+    <div>
+      <%= form.radio_button :is_showing, "all", checked: is_showing_checked(@is_showing, "all") %>
+      <%= form.label :is_showing_all, "全て" %>
+    </div>
+    <div>
+      <%= form.radio_button :is_showing, "1", checked: is_showing_checked(@is_showing, "1") %>
+      <%= form.label :is_showing_1, "公開中" %>
+    </div>
+    <div>
+      <%= form.radio_button :is_showing, "0", checked: is_showing_checked(@is_showing, "0") %>
+      <%= form.label :is_showing_0, "未公開" %>
+    </div>
     <%= form.submit "検索する", name: nil %>
   <% end %>
 </div>
 <div class="movie__container">
-  <% @movies.each do |movie| %>
-    <div class="movie__item">
-      <img class="movie__image" src="<%= movie.image_url %>" />
-      <h2 class="movie__title">
-        <%= movie.name %>
-      </h2>
-      <p class="movie__year"><%= movie.year %>年公開</p>
-      <p class="movie__description">
-        <%= movie.description[0, 49] %>
-        <% if movie.description.length > 50 then %>
-          ...
-        <% end %>
-      </p>
-    </div>
-  <% end %>
-</ul>
+  <div class="movie__inner">
+    <% @movies.each do |movie| %>
+      <a href="<%= movie_path(movie) %>">
+        <div class="movie__item">
+          <img class="movie__image" src="<%= movie.image_url %>" />
+          <h2 class="movie__title">
+            <%= movie.name %>
+          </h2>
+          <p class="movie__year"><%= movie.year %>年公開</p>
+          <p class="movie__description">
+            <%= movie.description[0, 49] %>
+            <% if movie.description.length > 50 then %>
+              ...
+            <% end %>
+          </p>
+        </div>
+      </a>
+    <% end %>
+  </div>
+</div>

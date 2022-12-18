@@ -5,11 +5,20 @@
 .movie {
   &__container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 95%;
-    margin-left: 2.5%;
+
+    width: 95%;
+    margin: 0 2.5%;
     justify-content: center;
+  }
+
+  &__inner {
+    max-width: 91.7%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+
+    margin: 0 auto;
   }
 
   &__item {
@@ -17,7 +26,7 @@
     width: 200px;
     display: flex;
     flex-direction: column;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     overflow: hidden;
   }
@@ -49,12 +58,138 @@
   }
 
   &__search {
-    & form {
+    form {
       display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
       justify-content: center;
-      margin: 16px 0;
+      margin: 16px 10px;
 
       flex-direction: row;
+    }
+  }
+}
+
+.movie-detail {
+  &__container {
+    max-width: 1000px;
+    width:100%;
+    padding: 0 10px;
+  }
+
+  &__overview {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__image-container {
+    display: flex;
+    width: 400px;
+    height: 300px;
+    justify-content: center;
+  }
+
+  &__image {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    width: calc(100% - 400px);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__title-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+
+  &__status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    padding: 10px;
+
+    &.showing-yes {
+      background-color: #e8d36e;
+    }
+
+    &.showing-no {
+      background-color: #e86e6e;
+    }
+  }
+
+  &__title {
+    width: 80%;
+    padding: 10px;
+    background-color: #cccccc;
+
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  &__year {
+    padding: 10px 0;
+    background-color: #cccccc;
+  }
+
+  &__description {
+    flex-grow: 1;
+    padding: 5px;
+    text-align: left;
+    background-color: #cccccc;
+  }
+
+  &__schedule-title {
+    margin: 15px 0 10px;
+    padding: 10px 0;
+
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__schedule-list {
+    width: 100%;
+    height: 120px;
+    overflow: auto;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+
+    &-item {
+      height: 100px;
+      width: 150px;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 5px;
+      box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.15);
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100%;
+        width: 100%;
+      }
     }
   }
 }

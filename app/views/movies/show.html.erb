@@ -1,0 +1,40 @@
+<h1>上映詳細</h1>
+<main>
+  <div class="movie-detail__container">
+    <div class="movie-detail__overview">
+      <div class="movie-detail__image-container">
+        <div class="movie-detail__image">
+          <img src="<%= @movie.image_url %>" alt="">
+        </div>
+      </div>
+      <div class="movie-detail__info">
+        <div class="movie-detail__title-container">
+          <div class="movie-detail__status <%= @movie.is_showing ? "showing-yes" : "showing-no" %>">
+            <span><%= @movie.is_showing ? "公開中" : "公開予定" %></span>
+          </div>
+          <div class="movie-detail__title">
+            <span><%= @movie.name %></span>
+          </div>
+        </div>
+        <div class="movie-detail__year">
+          <span><%= @movie.year %>年 公開</span>
+        </div>
+        <div class="movie-detail__description">
+          <span><%= @movie.description %></span>
+        </div>
+      </div>
+    </div>
+    <div class="moview-detail__schedule">
+      <div class="movie-detail__schedule-title">上映スケジュール</div>
+      <ul class="movie-detail__schedule-list">
+        <% @movie.schedules.each do |schedule| %>
+        <li class="movie-detail__schedule-list-item">
+          <a href="">
+            <span><%= schedule.start_time.strftime("%H:%M") %>〜<%= schedule.end_time.strftime("%H:%M") %></span>
+          </a>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</main>
