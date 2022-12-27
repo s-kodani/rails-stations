@@ -19,9 +19,17 @@
     <%= render "form", movie: @movie %>
   </div>
 
-  <button class="admin-main__button-container">
-    <%= link_to "削除", admin_movie_path(@movie), method: :delete, data: {
-      confirm: "削除しても良いですか？"
-    }, class: "admin-main__button" %>
-  </button>
+  <div>
+    <button class="admin-main__button-container admin-main__button--info">
+      <%= link_to "スケジュール追加", new_admin_movie_schedule_path(@movie), class: "admin-main__button" %>
+    </button>
+  </div>
+
+  <div>
+    <button class="admin-main__button-container admin-main__button--error">
+      <%= link_to "削除", admin_movie_path(@movie), method: :delete, data: {
+        confirm: "削除しても良いですか？"
+      }, class: "admin-main__button" %>
+    </button>
+  </div>
 </div>

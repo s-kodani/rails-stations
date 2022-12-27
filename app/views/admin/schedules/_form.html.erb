@@ -1,0 +1,43 @@
+<%= form_with model: [:admin, movie, schedule], local: true do |form| %>
+  <% if schedule.id != nil %>
+  <div>
+    <%= form.label :ID %><br>
+    <%= form.number_field :id, readonly: true, value: schedule.id %>
+  </div>
+  <% else %>
+  <div>
+    <%= form.label :ID %><br>
+    <%= form.number_field :id %>
+  </div>
+  <% end %>
+  <% if movie.id != nil %>
+  <div>
+    <%= form.label :映画ID %><br>
+    <%= form.number_field :movie_id, readonly: true, value: movie.id %>
+  </div>
+  <% else %>
+  <div>
+    <%= form.label :映画ID %><br>
+    <%= form.number_field :movie_id %>
+  </div>
+  <% end %>
+  <div>
+    <%= form.label :上映開始日時 %><br>
+    <%= form.datetime_field :start_time %>
+  </div>
+  <div>
+    <%= form.label :上映終了日時 %><br>
+    <%= form.datetime_field :end_time %>
+  </div>
+  <div>
+    <%= form.label :登録日時 %><br>
+    <%= form.datetime_field :created_at %>
+  </div>
+  <div>
+    <%= form.label :更新日時 %><br>
+    <%= form.datetime_field :updated_at %>
+  </div>
+  <div>
+      <%= form.submit %>
+  </div>
+<% end %>

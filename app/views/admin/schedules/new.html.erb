@@ -1,0 +1,21 @@
+<%= render 'admin/header' %>
+<%= render 'admin/side-nav' %>
+<div class="admin-main">
+  <h2 class="admin-main__title">上映スケジュールを追加</h2>
+  <div class="admin-main__alert">
+    <% if flash[:success] %>
+      <p class="alert alert-success"><%= flash[:success] %></p>
+    <% elsif flash[:danger] %>
+      <p class="alert alert-danger"><%= flash[:danger] %></p>
+    <% end %>
+    <ul>
+      <% @schedule.errors.each do |error| %>
+        <li><%= error.message %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="admin-main__form-container">
+    <%= render "form", movie: @movie , schedule: @schedule %>
+  </div>
+</div>

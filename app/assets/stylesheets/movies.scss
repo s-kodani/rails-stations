@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .movie {
   &__container {
     display: flex;
@@ -9,6 +15,11 @@
     width: 95%;
     margin: 0 2.5%;
     justify-content: center;
+
+    a:link, a:visited {
+      text-decoration: none;
+      color: #343434;
+    }
   }
 
   &__inner {
@@ -75,6 +86,11 @@
     max-width: 1000px;
     width:100%;
     padding: 0 10px;
+
+    a:link, a:visited {
+      text-decoration: none;
+      color: #343434;
+    }
   }
 
   &__overview {

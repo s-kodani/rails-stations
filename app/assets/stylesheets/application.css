@@ -38,11 +38,6 @@ h2 {
   font-size: 2em;
 }
 
-a:link, a:visited {
-  text-decoration: none;
-  color: #343434;
-}
-
 a:hover {
   opacity: 0.7;
 }

@@ -1,0 +1,40 @@
+<%= render 'admin/header' %>
+<%= render 'admin/side-nav' %>
+<div class="admin-main">
+  <h2 class="admin-main__title">Schedule list</h2>
+
+  <div class="admin-main__alert">
+    <% if flash[:success] %>
+      <p class="alert alert-success"><%= flash[:success] %></p>
+    <% elsif flash[:danger] %>
+      <p class="alert alert-danger"><%= flash[:danger] %></p>
+    <% end %>
+  </div>
+
+  <div class="admin-main__table">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>映画名</th>
+          <th>開始時刻</th>
+          <th>終了時刻</th>
+          <th>作成日時</th>
+          <th>更新日時</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @schedules.each do |schedule| %>
+          <tr>
+            <td><%= link_to schedule.id, edit_admin_movie_schedule_path(schedule.movie, schedule) %></td>
+            <td><%= schedule.movie.name %></td>
+            <td><%= schedule.start_time.strftime("%Y/%m/%d %H:%M") %></td>
+            <td><%= schedule.end_time.strftime("%Y/%m/%d %H:%M") %></td>
+            <td><%= schedule.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+            <td><%= schedule.updated_at.strftime("%Y/%m/%d %H:%M") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
