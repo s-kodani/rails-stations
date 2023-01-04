@@ -1,3 +1,10 @@
+<div>
+  <% flash.each do |message_type, messages| %>
+    <% messages.each do |message| %>
+      <p class="alert alert-<%= message_type %>"><%= message %></p>
+    <% end %>
+  <% end %>
+</div>
 <h1>座席票</h1>
 <div class="sheets__container">
   <table>
@@ -20,9 +27,13 @@
         </tr>
         <tr>
         <% end %>
-          <td>
-            <span><%= sheet.row %> - <%= sheet.column %></span>
-          </td>
+        <td>
+          <%= form_with url: new_movie_schedule_reservation_path(@movie_id, @schedule_id), method: :get do |form| %>
+            <%= form.hidden_field "date", value: @date %>
+            <%= form.hidden_field "sheet_id", value: sheet.id %>
+            <%= form.button sheet.row.to_s + " - " + sheet.column.to_s, type: "submit", name: nil %>
+          <% end %>
+        </td>
         <% @prev_row = sheet.row %>
       <% end %>
       </tr>

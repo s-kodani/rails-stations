@@ -175,37 +175,8 @@ main {
     font-weight: 600;
   }
 
-  &__schedule-list {
-    width: 100%;
-    height: 120px;
-    overflow: auto;
-
+  &__schedule-form {
     display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 20px;
-
-    &-item {
-      height: 100px;
-      width: 150px;
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      border-radius: 5px;
-      box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.15);
-
-      a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        height: 100%;
-        width: 100%;
-      }
-    }
+    justify-content: center;
   }
 }

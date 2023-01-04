@@ -15,7 +15,7 @@ class Admin::SchedulesController < ApplicationController
       flash[:success] = '登録が完了しました'
       redirect_to action: :new
     else
-      flash.now[:danger] = "登録に失敗しました"
+      flash[:danger] = "登録に失敗しました"
       render :new, status: 400
     end
   end
@@ -32,7 +32,7 @@ class Admin::SchedulesController < ApplicationController
     if @schedule.update(schedule_params)
       redirect_to edit_admin_movie_schedule_path(@movie, @schedule), flash: {success: "編集に成功しました"}
     else
-      flash.now[:danger] = "編集に失敗しました"
+      flash[:danger] = "編集に失敗しました"
       render :edit, status: :unprocessable_entity
     end
   end

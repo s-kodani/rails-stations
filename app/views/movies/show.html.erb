@@ -1,3 +1,10 @@
+<div>
+  <% if flash[:success] %>
+    <p class="alert alert-success"><%= flash[:success] %></p>
+  <% elsif flash[:danger] %>
+    <p class="alert alert-danger"><%= flash[:danger] %></p>
+  <% end %>
+</div>
 <h1>上映詳細</h1>
 <main>
   <div class="movie-detail__container">
@@ -26,15 +33,15 @@
     </div>
     <div class="moview-detail__schedule">
       <div class="movie-detail__schedule-title">上映スケジュール</div>
-      <ul class="movie-detail__schedule-list">
-        <% @schedules.each do |schedule| %>
-        <li class="movie-detail__schedule-list-item">
-          <a href="">
-            <span><%= schedule.start_time.strftime("%H:%M") %>〜<%= schedule.end_time.strftime("%H:%M") %></span>
-          </a>
-        </li>
-        <% end %>
-      </ul>
+      <%= form_with url: movie_reservation_path(@movie.id), method: :get, class: "movie-detail__schedule-form" do |form| %>
+        <%= form.hidden_field "date", value: Time.now.strftime("%Y-%m-%d") %>
+        <select name="schedule_id" id="schedule_id">
+          <% @schedules.each do |schedule| %>
+          <option value="<%= schedule.id %>"><%= schedule.start_time.strftime("%Y/%m/%d %H:%M") + "~" + schedule.end_time.strftime("%H:%M") %></option>
+          <% end %>
+        </select>
+        <%= form.button "座席を予約する", type: "submit", name: nil %>
+      <% end %>
     </div>
   </div>
 </main>
